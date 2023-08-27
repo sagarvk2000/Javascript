@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn1" value="Show"/>
+    <input type="button" id="btn2" value="Hide"/>
+
+    <div>
+        This is sample text in div tag
+
+    </div>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" 
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+        //ready will check the DOM rediness/ whether page is loaded or not
+        //$(document).ready(function () {
+
+        //    $("#btn2").click(function () {
+        //        $("div").hide();
+        //    });
+
+        //    $("#btn1").click(function () {
+        //        $("div").show();
+        //    });
+        //});
+
+        //for ui function
+        $(document).ready(function () {
+
+            $("div").draggable();
+
+            $("#btn2").click(function () {
+                $("div").hide("explode", 2000);
+            });
+            $("#btn1").click(function () {
+                $("div").show("blind", 2000);
+            });
+        });
+    </script>
+</body>
+</html>

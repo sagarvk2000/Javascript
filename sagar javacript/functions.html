@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--hw enter a no and that position name will be stored-->
+    Enter a number :<input type="text" id="t2" />
+    Enter a Name :<input type="text" id="t1" />
+    <input type="button" value="Add" onclick="add()" />
+    <input type="button" value="Remove" onclick="remove()" />
+    <input type="button" value="Add at Index" onclick="addAtIndex()" />
+    
+    <div id="d1"></div>
+    <script>
+        var names = ["sagar", "pankaj", "nilesh", "om", "ram"];
+
+        function defaultList() {
+            var data = "<ol>";
+            for (var i = 0; i < names.length; i++) {
+                data += "<li>" + names[i] + "</li>";
+            }
+            data += "</ol>";
+            document.getElementById("d1").innerHTML = data;
+        }
+
+        function add() {
+            var a = document.getElementById("t1").value;
+            names.push(a);
+            defaultList();
+        }
+
+        function addAtIndex() {
+            let index = parseInt(document.getElementById("t2").value);
+            let addName = document.getElementById("t1").value;
+
+            if (index > 0 && index <= names.length) {
+                names.splice(index - 1, 0, addName);
+                defaultList();
+            } else {
+                alert("invalid index");
+            }
+        }
+
+        function remove() {
+            var a = document.getElementById("t1").value;
+            for (var i = 0; i < names.length; i++) {
+                if (a == names[i]) {
+                    names.splice(i, 1);
+                    break;
+                }
+            }
+            defaultList();
+        }
+        defaultList();
+
+
+        //Array objects
+        var student = [
+            { sid: 1, name: "sagar", rollno: 4 },
+            { sid: 2, name: "om", rollno: 5 },
+            { sid: 3, name: "krishna", rollno: 6 },
+            { sid: 4, name: "pankaj", rollno: 7 },
+            { sid: 5, name: "nilesh", rollno: 8 }
+        ];
+
+        var data = "<table border='1'><tr><td>Sid</td><td>Name</td><td>Rollno</td></tr>";
+
+        for (var i = 0; i < student.length; i++) {
+            data += "<tr><td>" + student[i].sid + "</td><td>" + student[i].name +
+                "</td><td>" + student[i].rollno + "</td></tr>";
+        }
+
+        data += "</table>";
+        document.getElementById("d1").innerHTML = data;
+
+
+
+    </script>
+</body>
+</html>

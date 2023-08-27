@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+<body>
+    <!--<script src="index.js"></script><br />-->
+    Enter a Number :<input type="text" id="t1" /><br />
+    Enter a Number :<input type="text" id="t2" /><br />
+    result :<input type="text" id="t3" disabled /><br />
+    <!--onclick is an event in js-->
+    <input type="button" value="Add" onclick="Addition()" />
+    <input type="button" value="Sub" onclick="Sub()" />
+    <input type="button" value="Multiply" onclick="Mul()" />
+    <input type="button" value="Division" onclick="Division()" />
+    <input type="button" value="Clear" onclick="clearData()" />
+
+    <div id="d1"></div>
+    <p id="d2"></p>
+    <h1 id="d3"></h1>
+    <i id="d4"></i>
+     
+    <script>
+        function Addition() {
+            //when we want to take the input from user we use .value
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var sum = parseInt(a) + parseInt(b);
+            document.getElementById("t3").value = sum;
+            document.getElementById("d1").innerHTML = "sum is " + sum;
+            alert("sum is " + sum);
+        }
+        function Sub() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var sub = parseInt(a) - parseInt(b);
+            document.getElementById("t3").value = sub;
+            document.getElementById("d2").innerHTML = "sub is " + sub;
+
+        }
+        function Mul() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var mul = parseInt(a) * parseInt(b);
+            document.getElementById("t3").value = mul;
+            document.getElementById("d3").innerHTML = "mul is " + mul;
+
+        }
+        function Division() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var div = parseInt(a) / parseInt(b);
+            document.getElementById("t3").value = div;
+            document.getElementById("d4").innerHTML = "div is " + div;
+
+        }
+        function clearData() {
+            var res = confirm("Do you want to clear the form ?");
+            if (res == true) {
+                document.getElementById("t1").value = "";
+                document.getElementById("t2").value = "";
+                document.getElementById("t3").value = "";
+            }
+        }
+
+
+        /*array */
+        /*var numbers = [1, 2, 3, 4, 5, 6];
+
+        numbers.push(7, 8);
+        numbers.unshift(9);
+
+        number.pop();
+        numbers.shift();
+
+        numbers.splice(1, 1, 66, 99);
+        numbers.sort();
+        numbers.reverse();
+        var list3 = numbers.slice(2, 4);
+
+        for (var i = 0; i < numbers.length; i++) {
+            document.write("<br/>" + numbers[i]);
+        }
+        document.write("<br/>-------------------------------" )
+        for (var i = 0; i < list3.length; i++) {
+            document.write("<br/>0" + list3[i])
+        }
+        
+        var names = ["sagar", "nilesh", "pankaj", "pratik"];
+
+        //apend the element at the last in the list --add at the last
+        names.push("snehal");//add element last posiotion
+        names.unshift("krishna");//add element 1st posiotion
+        
+        names.pop();//remove last element
+        names.shift();//remove 1st element
+
+        //to replace or add in between 
+        names.splice(1, 1, "om", "ram");//1st value deals with index
+        names.sort();
+        names.reverse();
+        var list2 = names.slice(2, 5);//count-1...i.e(5-1)
+
+        for (var i = 0; i < names.length; i++) {
+            document.write("<br/>" + names[i]);
+        }
+        document.write("<br/>---------------------");
+        for(let i = 0; i < list2.length; i++) {
+            document.write("<br/>" + list2[i]);
+        }
+        */
+
+
+
+    </script>
+</body>
+</html>
